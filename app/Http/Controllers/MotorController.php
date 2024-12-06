@@ -15,7 +15,7 @@ class MotorController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'speed' => 'required|numeric|min:0|max:100', // Ensure 'speed' is a required numeric value between 0 and 100
+            'speed' => 'required|numeric|min:0|max:255', // Ensure 'speed' is a required numeric value between 0 and 100
         ]);
 
         $speed = $validatedData['speed'];

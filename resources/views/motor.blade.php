@@ -17,13 +17,13 @@
 <body>
 
     <h2>Motor Speed Control</h2>
-<label for="motorSpeed">Motor Speed: <span id="speedValue">50</span></label>
+{{-- <label for="motorSpeed">Motor Speed: <span id="speedValue">50</span></label> --}}
 {{-- <input type="range" id="speed" name="speed" min="0" max="255" value="0"  oninput="Submit(this.value)"> --}}
 
      <div>
         @csrf
         <label for="speed">Set Motor Speed (0-100):</label>
-        <input type="number" id="speed" name="speed" min="0" max="100">
+        <input type="number" id="speed" name="speed">
         <button type="submit" onclick="Submit()">Submit</button>
 
 
