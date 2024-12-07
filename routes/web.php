@@ -25,6 +25,10 @@ Route::get('/motor', [MotorController::class, 'index'])->name('motor.index');
 Route::post('/motor/speed', [MotorController::class, 'update']);
 
 
+
+Route::get('/motor/status', [MotorController::class, 'status']);
+
+
 // Route::post('/motor/speed', function (Request $request) {
 //     $speed = $request->input('speed');
 

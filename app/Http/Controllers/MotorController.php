@@ -30,12 +30,30 @@ class MotorController extends Controller
 
         $response = Http::post('http://localhost:5000/motor/speed', [
             'speed' => $speed,
+
         ]);
 
         return $response->json();
 
 
     }
+
+
+
+    public function status()
+    {
+        try {
+            // Assuming the Flask API provides motor status
+            $response = Http::get('http://localhost:5000/motor/status');
+
+            // Return the status received from the Flask backend
+            return response()->json($response->json());
+        } catch (\Exception $e) {
+            // Handle errors, e.g., if the Flask server is unreachable
+            return response()->json(['error' => 'Failed to fetch motor status.', 'message' => $e->getMessage()], 500);
+        }
+    }
+
 
 
 }
